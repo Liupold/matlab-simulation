@@ -14,9 +14,12 @@ for n = 1:quantum_count_of_time;
         PARTICLE_DETECTOR += PARTICLE_BOX(:, particle_num);
         PARTICLE_DETECTED_T(n) = PARTICLE_DETECTOR(2);
 endfor
-figure ("visible", "off");
+% figure ("visible", "off");
+hold on;
 plot(delta_t * [1:quantum_count_of_time], PARTICLE_DETECTED_T);
+plot(delta_t * [1:quantum_count_of_time], num_of_particle - PARTICLE_DETECTED_T);
 title('Nature of radiation from random movement.');
 ylabel('No of particle on right \rightarrow');
 xlabel('Time in second(s) \rightarrow'); grid on;
-print -dpdf radiation.pdf
+waitfor(gcf);
+% print -dpdf radiation_exchnage.pdf
