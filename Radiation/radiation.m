@@ -19,4 +19,4 @@ plot(delta_t * [1:quantum_count_of_time], PARTICLE_DETECTED_T);
 title('Nature of radiation from random movement.');
 ylabel('No of particle on right \rightarrow');
 xlabel('Time in second(s) \rightarrow'); grid on;
-print -dpng radiation.png
+print -dpdf radiation.pdf
